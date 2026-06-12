@@ -158,3 +158,9 @@ curl -s http://localhost:8080/v1/chat/completions \
 
 ただし chat template や repetition_penalty などの推奨値は手で渡す必要が
 あるので、通常は `src/run.py` 経由を推奨。
+
+## 免責
+
+個人で作った非公式ツールです。Liquid AI とも Apple (mlx) とも無関係です。
+モデルの重みは同梱しておらず別ライセンス ([LFM Open License v1.0](https://www.liquid.ai/lfm-license)) です。
+使う人それぞれで条件を確認してください。自己責任で利用してください。
