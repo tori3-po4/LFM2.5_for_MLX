@@ -1,0 +1,59 @@
+[project]
+name = "my-lfm2-5-agent"
+version = "0.1.0"
+description = "LFM2.5-1.2B or 8B-a1bでエージェント的な動作ができるようにする"
+requires-python = ">=3.14"
+dependencies = [
+    # 例: "transformers>=4.46",
+    #     "torch>=2.5",
+    #     "datasets>=3.0",
+    "mlx-lm>=0.31.3",
+    "click>=8.1",
+    "prompt-toolkit>=3.0",
+]
+
+[project.scripts]
+lfm2-run = "run:main"
+lfm2-serve = "serve:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.uv]
+# Nix store の Python は PyCharm の静的解析と相性が悪いため、
+# uv が ~/.local/share/uv/python/ に取得する Python のみを使う
+python-preference = "only-managed"
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+
+[tool.pyright]
+pythonVersion = "3.14"
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "standard"
+reportMissingImports = "error"
+reportMissingTypeStubs = "warning"
