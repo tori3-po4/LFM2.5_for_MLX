@@ -1,4 +1,4 @@
-# my-LFM2.5-agent
+# LFM2.5_for_MLX
 
 LiquidAI の **LFM2.5-8B-A1B** (総 8.3B / アクティブ 1.5B の hybrid MoE) を
 [mlx-lm](https://github.com/ml-explore/mlx-lm) を推論エンジンに、Apple Silicon
