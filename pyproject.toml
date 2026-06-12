@@ -1,5 +1,5 @@
 [project]
-name = "my-lfm2-5-agent"
+name = "LFM2.5_for_MLX"
 version = "0.1.0"
 description = "LFM2.5-1.2B or 8B-a1bでエージェント的な動作ができるようにする"
 requires-python = ">=3.14"
